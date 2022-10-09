@@ -8,22 +8,22 @@ from unittest import result
 
 list = [1.1, 1.2, 3.1, 5, 10.01]
 
-newList = [] #Собираем в список дробные части значений элементов списка
+newList = [] 
 
-for i in range(len(list)): #С помощью цикла перебираем все элементы и записываем дробную часть в список
-    num = round((list[i] % 1), 2) #округляем
+for i in range(len(list)): 
+    num = round((list[i] % 1), 2) 
     newList.append(num)
 
-print(newList)  #Печатаем список для наглядности
+print(newList)  
 
-def minimum(list): #Функция определения минимального значения
+def minimum(list): 
     min = list[0]
     for i in range(1, len(list)):
-        if list[i] < min and list[i] != 0: #исключаем из вычисления минимально значения то, у которого дробная часть осутствует
+        if list[i] < min and list[i] != 0: 
             min = list[i]
     return min
 
-def maximum(list): #Функция определения максимального значения
+def maximum(list): 
     max = list[0]
     for i in range(1, len(list)):
         if list[i] > max:
