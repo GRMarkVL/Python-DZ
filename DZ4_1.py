@@ -10,7 +10,7 @@ import math
 from random import Random, uniform
 import random
 
-#Вычисление pi по формуле Беллара
+
 def bbp(n): 
     pi = Decimal(0)
     k = 0
@@ -25,14 +25,11 @@ print(bbp(2))
 randIn = random.randint(2, 7)
 print(randIn)
 
-# Просто количество после запятой
+
 print("{:.{}f}".format(numPi, randIn))
 
 
-# d = 1 / 10**randIn # Задание произвольного предела от сгенерированного
-# print(d)
 
-# Задание предела через ввод пользователя
 d = float(input("Введите количество чисел по шаблону в пределах от 0.1 до 0.0000000001: "))
 
 print(d)
@@ -42,4 +39,4 @@ while d < 1:
     count = count + 1
     
 print(count)
-print("{:.{}f}".format(numPi, count)) # Вывод количества после запятой при задании пользователем с клавиатуры по шаблону в пределах
+print("{:.{}f}".format(numPi, count)) 

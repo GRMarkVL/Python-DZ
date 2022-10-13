@@ -15,34 +15,32 @@ k = int(input("Введите число: "))
 
 list = []
 for i in range(k+1):
-    num = random.randint(-100, 100) #Генерируем случайные множители в количестве равному максимальному коэффициенту k
+    num = random.randint(-100, 100) 
     list.append(num)
 print(list)
 
 myNewList = []
 
 for i in range(k, -1, -1):
-    if list[i] != 0:  # Если множитель = 0, игнорируем его, если не= 0, тогда запускаем сборку
+    if list[i] != 0:  
         if i == 0:
-            myNewList.append(str(list[i])) # Собираем строчку формулы для нулевой степени
+            myNewList.append(str(list[i])) 
         elif i == 1:
-            myNewList.append(str(list[i]) + "*x") # Собираем строчку формулы 
+            myNewList.append(str(list[i]) + "*x") 
         else:
-            myNewList.append(str(list[i]) + "*x" + "^" + str(i)) # Собираем строчку формулы 
-# print(myNewList)
-
+            myNewList.append(str(list[i]) + "*x" + "^" + str(i)) 
 newString = ""
 for i in myNewList:
-    newString += str(i) + " " #Переводим список в строку
-# print(newString)
+    newString += str(i) + " " 
+
 
 l = len(newString)
-removeLast = newString[:l-1] #Убираем последний символ (в нашем случае это лишний пробел, который заменился на лишний плюс)
+removeLast = newString[:l-1] 
 
-removeLast = removeLast.replace(' ', ' + ')   #Заменяем пробелы на +
-removeLast = removeLast.replace('+ -', '- ')   # Если число отрицательное, убираем лишний + и пробел"
+removeLast = removeLast.replace(' ', ' + ')   
+removeLast = removeLast.replace('+ -', '- ')   
 
-removeLast = ''.join((removeLast, " = 0")) # Добавляем в конец формулы ""= 0"
+removeLast = ''.join((removeLast, " = 0"))
 print(removeLast)
 
 with open('poly.txt', 'w', encoding='UTF-8') as ff:
